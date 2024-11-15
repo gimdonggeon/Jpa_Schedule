@@ -1,5 +1,8 @@
 package com.kdg.jpa_schedule.dto;
 
+import lombok.Getter;
+
+@Getter
 public class SignUpResponseDto {
     private final Long id;
 

@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,6 +27,13 @@ public class UserService {
         return new SignUpResponseDto(savedUser.getId(), savedUser.getName(), savedUser.getEmail());
     }
 
+    public List<UserResponseDto> findAll() {
+        return userRepository.findAll()
+                .stream()
+                .map(UserResponseDto::toDto)
+                .toList();
+    }
+
     public UserResponseDto findById(Long id) {
 
         Optional<User> optionalUser = userRepository.findById(id);
@@ -36,7 +44,7 @@ public class UserService {
 
         User findUser = optionalUser.get();
 
-        return new UserResponseDto(findUser.getName(), findUser.getEmail());
+        return new UserResponseDto(findUser.getId(), findUser.getName(), findUser.getEmail());
     }
 
     @Transactional
@@ -49,5 +57,8 @@ public class UserService {
         }
 
         findUser.updatePassword(newPassword);
+    }
+
+    public void delete(Long id) {
     }
 }

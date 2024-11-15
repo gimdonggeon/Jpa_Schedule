@@ -2,8 +2,10 @@ package com.kdg.jpa_schedule.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 @Entity
 @Table(name = "schedule")
 public class Schedule extends BaseEntity {

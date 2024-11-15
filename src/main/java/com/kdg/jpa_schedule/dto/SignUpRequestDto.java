@@ -1,7 +1,9 @@
 package com.kdg.jpa_schedule.dto;
 
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 public class SignUpRequestDto {
 

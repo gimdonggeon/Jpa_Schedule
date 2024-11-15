@@ -30,6 +30,8 @@ public class ScheduleController {
         return ResponseEntity.status(HttpStatus.CREATED).body(scheduleResponseDto);
     }
 
+
+
     @GetMapping
     public ResponseEntity<List<ScheduleResponseDto>> findAll() {
         List<ScheduleResponseDto> scheduleResponseDtoList = scheduleService.findAll();

@@ -22,3 +22,4 @@ public class ScheduleResponseDto {
         return new ScheduleResponseDto(schedule.getId(), schedule.getTitle(), schedule.getContents());
     }
 }
+
